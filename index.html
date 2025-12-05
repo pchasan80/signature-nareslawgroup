@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nares Law Group - Email Signature Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Nares Law Group</h1>
+            <h2>Email Signature Generator</h2>
+        </header>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h3>Enter Your Details</h3>
+                <form id="signatureForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="e.g. Kaitlin Nares" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" id="jobTitle" placeholder="e.g. Founder & Attorney" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="e.g. kaitlin@nareslawgroup.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Direct Phone</label>
+                        <input type="text" id="phone" placeholder="e.g. 720-637-7786">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photoUrl">Photo URL (Optional)</label>
+                        <input type="text" id="photoUrl" placeholder="Paste a link to your photo">
+                        <small>Or leave blank for text only.</small>
+                    </div>
+                </form>
+            </div>
+
+            <div class="preview-section">
+                <h3>Signature Preview</h3>
+                <div class="preview-box" id="signaturePreview">
+                    <!-- Signature will appear here -->
+                </div>
+                
+                <div class="actions">
+                    <button id="copyBtn" class="btn primary">Copy Signature to Clipboard</button>
+                    <p id="copyStatus" class="status-msg"></p>
+                </div>
+
+                <div class="instructions">
+                    <h4>How to use in Gmail:</h4>
+                    <ol>
+                        <li>Click the "Copy Signature" button above.</li>
+                        <li>Open Gmail and go to <strong>Settings > See all settings</strong>.</li>
+                        <li>Scroll down to the <strong>Signature</strong> section.</li>
+                        <li>Create a new signature or edit an existing one.</li>
+                        <li>Paste (Ctrl+V or Cmd+V) the signature into the text box.</li>
+                        <li>Scroll to the bottom and click <strong>Save Changes</strong>.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

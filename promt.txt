@@ -1,0 +1,7 @@
+Let's develop a HTML Email signature specially for Gmail for the Nares Law Group.
+
+Their website: https://www.nareslawgroup.com/
+
+Here is my idea but if you have better idea, please let me know.
+
+We will make a HTML form where the users will put their personal information and including a professional photo. When they will submit the form, the app will generate a HTML Email signature. We will give them an option to copy the signature for Gmail signature.
