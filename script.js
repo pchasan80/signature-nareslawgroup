@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         name: "Nares Law Group",
         tagline: "Truck Wreck & Brain Injury Lawyers",
         address: "501 S. Cherry Street, Suite 1100 <br>Denver, CO 80246",
+        mapUrl: "https://maps.app.goo.gl/9srCN5gs3v8p1wiB7",
         website: "www.nareslawgroup.com",
         websiteUrl: "https://www.nareslawgroup.com/",
         logoUrl: "https://www.nareslawgroup.com/wp-content/uploads/elementor/thumbs/LOGO-2-FOR-LIGHT-BACKGROUND_2-removebg-preview-1-r333rbobxh5vfux4toi0wl2ghzqn1hl7w9d74e7lpc.png", // Using one of the images found, or we can use a text fallback
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             ${data.fax ? contactRow(icons.contact.fax, data.fax, null) : ''}
                             ${contactRow(icons.contact.email, data.email, `mailto:${data.email}`)}
                             ${contactRow(icons.contact.web, companyData.website, companyData.websiteUrl)}
-                            ${contactRow(icons.contact.address, companyData.address, null)}
+                            ${contactRow(icons.contact.address, companyData.address, companyData.mapUrl)}
                         </table>
 
                         <div style="margin-bottom: 15px;">
