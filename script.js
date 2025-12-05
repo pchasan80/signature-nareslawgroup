@@ -39,17 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Icons (hosted on a reliable CDN or similar)
     const icons = {
         social: {
-            linkedin: "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-            facebook: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
-            instagram: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-            youtube: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+            linkedin: "https://cdn-icons-png.flaticon.com/512/61/61109.png",
+            facebook: "https://cdn-icons-png.flaticon.com/512/20/20673.png",
+            instagram: "https://cdn-icons-png.flaticon.com/512/87/87390.png",
+            youtube: "https://cdn-icons-png.flaticon.com/512/1384/1384028.png"
         },
         contact: {
-            phone: "https://cdn-icons-png.flaticon.com/512/455/455705.png",
+            phone: "https://cdn-icons-png.flaticon.com/512/483/483947.png",
             email: "https://cdn-icons-png.flaticon.com/512/542/542638.png",
             web: "https://cdn-icons-png.flaticon.com/512/1006/1006771.png",
             address: "https://cdn-icons-png.flaticon.com/512/535/535239.png",
-            fax: "https://cdn-icons-png.flaticon.com/512/483/483947.png"
+            fax: "https://cdn-icons-png.flaticon.com/512/7175/7175143.png"
         }
     };
 
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </table>
 
                         <div style="margin-bottom: 15px;">
-                            <img src="${companyData.logoUrl}" alt="Nares Law Group" width="150" style="display: block; max-width: 150px; height: auto;">
+                            <img src="${companyData.logoUrl}" alt="Nares Law Group" width="400" style="display: block; width: 100%; max-width: 100%; height: auto;">
                         </div>
 
                         <div>
