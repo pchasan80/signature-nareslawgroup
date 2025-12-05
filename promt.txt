@@ -10,6 +10,8 @@ Signature Layout & Design Requirements:
 
 The email signature should use a two-column layout.
 
+Signature width will be total 600px. The left column will be 200px and right column will be 400px.
+
 Left Column:
 
 A tall professional headshot of the user (portrait orientation for a clean, premium look).

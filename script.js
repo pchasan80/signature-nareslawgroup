@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const companyData = {
         name: "Nares Law Group",
         tagline: "Truck Wreck & Brain Injury Lawyers",
-        address: "501 S. Cherry Street, Suite 1100 Denver, CO 80246",
+        address: "501 S. Cherry Street, Suite 1100 <br>Denver, CO 80246",
         website: "www.nareslawgroup.com",
         websiteUrl: "https://www.nareslawgroup.com/",
-        logoUrl: "https://www.nareslawgroup.com/wp-content/uploads/2025/03/image-99-1.png", // Using one of the images found, or we can use a text fallback
+        logoUrl: "https://www.nareslawgroup.com/wp-content/uploads/elementor/thumbs/LOGO-2-FOR-LIGHT-BACKGROUND_2-removebg-preview-1-r333rbobxh5vfux4toi0wl2ghzqn1hl7w9d74e7lpc.png", // Using one of the images found, or we can use a text fallback
         colors: {
             primary: "#002147", // Navy
             accent: "#D4AF37",  // Gold
@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let photoHtml = '';
         if (data.photoUrl) {
             photoHtml = `
-                <td style="padding-right: 20px; vertical-align: top;">
-                    <img src="${data.photoUrl}" alt="${data.fullName}" width="120" style="width: 120px; height: auto; border-radius: 4px; object-fit: cover;">
+                <td width="200" style="width: 200px; vertical-align: top;">
+                    <img src="${data.photoUrl}" alt="${data.fullName}" width="180" style="width: 180px; height: auto; border-radius: 4px; object-fit: cover;">
                 </td>
             `;
         }
@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
 
         const signatureHtml = `
-            <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: ${companyData.colors.text};">
+            <table width="600" cellpadding="0" cellspacing="0" border="0" style="width: 600px; font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: ${companyData.colors.text};">
                 <tr>
                     ${photoHtml}
-                    <td style="vertical-align: top;">
+                    <td width="400" style="width: 400px; vertical-align: top;">
                         <div style="font-size: 18px; font-weight: bold; color: ${companyData.colors.primary}; margin-bottom: 4px;">
                             ${data.fullName}
                         </div>
