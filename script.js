@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <tr>
                     <td colspan="${data.photoUrl ? 2 : 1}" style="padding-top: 20px;">
                         <p style="font-size: 10px; color: #999; line-height: 1.2; margin: 0; border-top: 1px solid #eee; padding-top: 10px;">
-                            CONFIDENTIALITY NOTICE: The contents of this email message and any attachments are intended solely for the addressee(s) and may contain confidential and/or privileged information and may be legally protected from disclosure.
+                            CONFIDENTIALITY NOTICE: This message is intended only for the named recipient and may contain confidential or privileged information.  It is protected by the Electronic Communications Privacy Act, 18 USC Sections 2150-21 and is legally privileged.  If you are not the named recipient, please delete this message and contact the sender at 720-637-7786 or by reply email indicating that you received it in error.
                         </p>
                     </td>
                 </tr>
