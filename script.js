@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         jobTitle: document.getElementById('jobTitle'),
         email: document.getElementById('email'),
         phone: document.getElementById('phone'),
+        fax: document.getElementById('fax'),
         photoUrl: document.getElementById('photoUrl')
     };
 
@@ -35,12 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Social Icons (hosted on a reliable CDN or similar)
-    const socialIcons = {
-        linkedin: "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-        facebook: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
-        instagram: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-        youtube: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+    // Icons (hosted on a reliable CDN or similar)
+    const icons = {
+        social: {
+            linkedin: "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+            facebook: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
+            instagram: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+            youtube: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+        },
+        contact: {
+            phone: "https://cdn-icons-png.flaticon.com/512/455/455705.png",
+            email: "https://cdn-icons-png.flaticon.com/512/542/542638.png",
+            web: "https://cdn-icons-png.flaticon.com/512/1006/1006771.png",
+            address: "https://cdn-icons-png.flaticon.com/512/535/535239.png",
+            fax: "https://cdn-icons-png.flaticon.com/512/483/483947.png"
+        }
     };
 
     function generateSignature() {
@@ -49,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
             jobTitle: inputs.jobTitle.value || "Founder & Attorney",
             email: inputs.email.value || "kaitlin@nareslawgroup.com",
             phone: inputs.phone.value || "720-637-7786",
+            fax: inputs.fax.value || "",
             photoUrl: inputs.photoUrl.value
         };
 
@@ -56,10 +67,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (data.photoUrl) {
             photoHtml = `
                 <td style="padding-right: 20px; vertical-align: top;">
-                    <img src="${data.photoUrl}" alt="${data.fullName}" width="100" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; border: 2px solid ${companyData.colors.accent};">
+                    <img src="${data.photoUrl}" alt="${data.fullName}" width="120" style="width: 120px; height: auto; border-radius: 4px; object-fit: cover;">
                 </td>
             `;
         }
+
+        // Helper for contact rows
+        const contactRow = (icon, text, href) => `
+            <tr>
+                <td style="width: 20px; vertical-align: middle; padding-bottom: 5px;">
+                    <img src="${icon}" width="14" height="14" style="display: block;">
+                </td>
+                <td style="vertical-align: middle; padding-bottom: 5px; padding-left: 8px;">
+                    ${href ? `<a href="${href}" style="color: ${companyData.colors.text}; text-decoration: none;">${text}</a>` : `<span style="color: ${companyData.colors.text};">${text}</span>`}
+                </td>
+            </tr>
+        `;
 
         const signatureHtml = `
             <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Montserrat', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: ${companyData.colors.text};">
@@ -73,39 +96,32 @@ document.addEventListener('DOMContentLoaded', function() {
                             ${data.jobTitle}
                         </div>
                         
-                        <div style="border-top: 2px solid ${companyData.colors.accent}; width: 50px; margin-bottom: 10px;"></div>
+                        <div style="border-top: 2px solid ${companyData.colors.accent}; width: 50px; margin-bottom: 15px;"></div>
 
-                        <div style="margin-bottom: 5px;">
-                            <strong style="color: ${companyData.colors.primary};">P:</strong> <a href="tel:${data.phone.replace(/[^0-9+]/g, '')}" style="color: ${companyData.colors.text}; text-decoration: none;">${data.phone}</a>
-                            <span style="color: ${companyData.colors.accent}; margin: 0 5px;">|</span>
-                            <strong style="color: ${companyData.colors.primary};">E:</strong> <a href="mailto:${data.email}" style="color: ${companyData.colors.text}; text-decoration: none;">${data.email}</a>
-                        </div>
-                        
-                        <div style="margin-bottom: 10px;">
-                            <strong style="color: ${companyData.colors.primary};">W:</strong> <a href="${companyData.websiteUrl}" style="color: ${companyData.colors.text}; text-decoration: none;">${companyData.website}</a>
-                        </div>
+                        <table cellpadding="0" cellspacing="0" border="0" style="font-size: 13px; margin-bottom: 15px;">
+                            ${contactRow(icons.contact.phone, data.phone, `tel:${data.phone.replace(/[^0-9+]/g, '')}`)}
+                            ${data.fax ? contactRow(icons.contact.fax, data.fax, null) : ''}
+                            ${contactRow(icons.contact.email, data.email, `mailto:${data.email}`)}
+                            ${contactRow(icons.contact.web, companyData.website, companyData.websiteUrl)}
+                            ${contactRow(icons.contact.address, companyData.address, null)}
+                        </table>
 
-                        <div style="margin-bottom: 15px; color: ${companyData.colors.grey}; font-size: 13px;">
-                            ${companyData.address}
-                        </div>
-
-                        <div style="margin-bottom: 10px;">
-                            <span style="font-weight: bold; color: ${companyData.colors.primary}; font-size: 16px;">Nares Law Group</span><br>
-                            <span style="color: ${companyData.colors.accent}; font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">${companyData.tagline}</span>
+                        <div style="margin-bottom: 15px;">
+                            <img src="${companyData.logoUrl}" alt="Nares Law Group" width="150" style="display: block; max-width: 150px; height: auto;">
                         </div>
 
                         <div>
                             <a href="${companyData.social.linkedin}" style="text-decoration: none; margin-right: 5px;">
-                                <img src="${socialIcons.linkedin}" alt="LinkedIn" width="20" height="20" style="display: inline-block;">
+                                <img src="${icons.social.linkedin}" alt="LinkedIn" width="20" height="20" style="display: inline-block;">
                             </a>
                             <a href="${companyData.social.facebook}" style="text-decoration: none; margin-right: 5px;">
-                                <img src="${socialIcons.facebook}" alt="Facebook" width="20" height="20" style="display: inline-block;">
+                                <img src="${icons.social.facebook}" alt="Facebook" width="20" height="20" style="display: inline-block;">
                             </a>
                             <a href="${companyData.social.instagram}" style="text-decoration: none; margin-right: 5px;">
-                                <img src="${socialIcons.instagram}" alt="Instagram" width="20" height="20" style="display: inline-block;">
+                                <img src="${icons.social.instagram}" alt="Instagram" width="20" height="20" style="display: inline-block;">
                             </a>
                             <a href="${companyData.social.youtube}" style="text-decoration: none;">
-                                <img src="${socialIcons.youtube}" alt="YouTube" width="20" height="20" style="display: inline-block;">
+                                <img src="${icons.social.youtube}" alt="YouTube" width="20" height="20" style="display: inline-block;">
                             </a>
                         </div>
                     </td>
