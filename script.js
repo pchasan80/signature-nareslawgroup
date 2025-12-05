@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let photoHtml = '';
         if (data.photoUrl) {
             photoHtml = `
-                <td width="200" style="width: 200px; vertical-align: top;">
+                <td width="200" style="width: 200px; vertical-align: bottom;">
                     <img src="${data.photoUrl}" alt="${data.fullName}" width="180" style="width: 180px; height: auto; border-radius: 4px; object-fit: cover;">
                 </td>
             `;
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <img src="${companyData.logoUrl}" alt="Nares Law Group" width="400" style="display: block; width: 100%; max-width: 100%; height: auto;">
                         </div>
 
-                        <div>
+                        <div style="margin-bottom: 5px;">
                             <a href="${companyData.social.linkedin}" style="text-decoration: none; margin-right: 5px;">
                                 <img src="${icons.social.linkedin}" alt="LinkedIn" width="20" height="20" style="display: inline-block;">
                             </a>
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="${data.photoUrl ? 2 : 1}" style="padding-top: 20px;">
+                    <td colspan="${data.photoUrl ? 2 : 1}" style="padding-top: 0px;">
                         <p style="font-size: 10px; color: #999; line-height: 1.2; margin: 0; border-top: 1px solid #eee; padding-top: 10px;">
                             CONFIDENTIALITY NOTICE: This message is intended only for the named recipient and may contain confidential or privileged information.  It is protected by the Electronic Communications Privacy Act, 18 USC Sections 2150-21 and is legally privileged.  If you are not the named recipient, please delete this message and contact the sender at 720-637-7786 or by reply email indicating that you received it in error.
                         </p>
